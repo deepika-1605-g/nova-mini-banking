@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>NOVA Banking</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- =====================================
+     NOTIFICATION
+====================================== -->
+
+<div id="notification"></div>
+
+
+<!-- =====================================
+     AUTH PAGE
+====================================== -->
+
+<section
+    id="authPage"
+    class="page auth-page">
+
+
+    <div class="auth-left">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                N
+            </div>
+
+            <span>NOVA</span>
+
+        </div>
+
+
+        <div class="hero-content">
+
+            <span class="eyebrow">
+                DIGITAL BANKING
+            </span>
+
+            <h1>
+                Banking made
+                <span>simple.</span>
+            </h1>
+
+            <p>
+                A simple and secure banking experience
+                for your everyday transactions.
+            </p>
+
+
+            <div class="features">
+
+                <div>
+                    <span>↗</span>
+                    Fast transfers
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Secure payments
+                </div>
+
+                <div>
+                    <span>◇</span>
+                    Easy tracking
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="auth-footer">
+
+            © 2026 NOVA Banking
+
+        </div>
+
+    </div>
+
+
+    <div class="auth-right">
+
+        <div class="auth-card">
+
+
+            <div class="auth-heading">
+
+                <h2 id="authTitle">
+                    Welcome back
+                </h2>
+
+                <p id="authSubtitle">
+                    Sign in to access your account
+                </p>
+
+            </div>
+
+
+            <!-- TABS -->
+
+            <div class="tabs">
+
+                <button
+                    id="loginTab"
+                    class="tab active"
+                    onclick="showLogin()">
+
+                    Login
+
+                </button>
+
+
+                <button
+                    id="registerTab"
+                    class="tab"
+                    onclick="showRegister()">
+
+                    Create account
+
+                </button>
+
+            </div>
+
+
+            <!-- LOGIN -->
+
+            <div
+                id="loginForm"
+                class="form">
+
+
+                <div class="input-group">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        id="loginEmail"
+                        type="email"
+                        placeholder="Enter your email">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Password
+                    </label>
+
+                    <input
+                        id="loginPassword"
+                        type="password"
+                        placeholder="Enter your password">
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    onclick="login()">
+
+                    Login
+                    <span>→</span>
+
+                </button>
+
+            </div>
+
+
+            <!-- REGISTER -->
+
+            <div
+                id="registerForm"
+                class="form hidden">
+
+
+                <div class="input-group">
+
+                    <label>
+                        Full name
+                    </label>
+
+                    <input
+                        id="registerName"
+                        type="text"
+                        placeholder="Enter your name">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        id="registerEmail"
+                        type="email"
+                        placeholder="Enter your email">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Password
+                    </label>
+
+                    <input
+                        id="registerPassword"
+                        type="password"
+                        placeholder="Create a password">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Transaction PIN
+                    </label>
+
+                    <input
+                        id="registerPin"
+                        type="password"
+                        maxlength="4"
+                        inputmode="numeric"
+                        placeholder="Create 4-digit PIN">
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    onclick="register()">
+
+                    Create account
+                    <span>→</span>
+
+                </button>
+
+            </div>
+
+
+            <div class="security">
+
+                🔒 Your credentials are securely protected.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     DASHBOARD
+====================================== -->
+
+<section
+    id="dashboardPage"
+    class="page dashboard-page hidden">
+
+
+    <nav class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                N
+            </div>
+
+            <span>NOVA</span>
+
+        </div>
+
+
+        <div class="nav-right">
+
+            <div
+                id="userInitial"
+                class="avatar">
+
+                U
+
+            </div>
+
+
+            <div class="user-name">
+
+                <small>
+                    Welcome
+                </small>
+
+                <strong id="userName">
+                    User
+                </strong>
+
+            </div>
+
+
+            <button
+                class="logout"
+                onclick="logout()">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard">
+
+
+        <div class="dashboard-title">
+
+            <span class="eyebrow">
+                OVERVIEW
+            </span>
+
+            <h1>
+                Your dashboard
+            </h1>
+
+            <p>
+                Manage your money from one place.
+            </p>
+
+        </div>
+
+
+        <!-- BALANCE -->
+
+        <div class="balance-card">
+
+            <div>
+
+                <span>
+                    Available balance
+                </span>
+
+                <h2 id="balance">
+                    ₹0.00
+                </h2>
+
+            </div>
+
+
+            <div class="account-info">
+
+                <small>
+                    Account number
+                </small>
+
+                <strong id="accountNumber">
+                    --------
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+
+        <h2 class="section-title">
+            Quick actions
+        </h2>
+
+
+        <div class="actions">
+
+
+            <!-- DEPOSIT -->
+
+            <div class="action-card">
+
+                <div class="action-icon">
+                    ↓
+                </div>
+
+                <h3>
+                    Deposit
+                </h3>
+
+                <p>
+                    Add money to your account.
+                </p>
+
+
+                <input
+                    id="depositAmount"
+                    type="number"
+                    placeholder="Amount">
+
+
+                <input
+                    id="depositPin"
+                    type="password"
+                    maxlength="4"
+                    placeholder="Transaction PIN">
+
+
+                <button
+                    onclick="deposit()">
+
+                    Deposit
+
+                </button>
+
+            </div>
+
+
+            <!-- WITHDRAW -->
+
+            <div class="action-card">
+
+                <div class="action-icon">
+                    ↑
+                </div>
+
+                <h3>
+                    Withdraw
+                </h3>
+
+                <p>
+                    Withdraw money from your account.
+                </p>
+
+
+                <input
+                    id="withdrawAmount"
+                    type="number"
+                    placeholder="Amount">
+
+
+                <input
+                    id="withdrawPin"
+                    type="password"
+                    maxlength="4"
+                    placeholder="Transaction PIN">
+
+
+                <button
+                    onclick="withdraw()">
+
+                    Withdraw
+
+                </button>
+
+            </div>
+
+
+            <!-- TRANSFER -->
+
+            <div class="action-card">
+
+                <div class="action-icon">
+                    →
+                </div>
+
+                <h3>
+                    Transfer
+                </h3>
+
+                <p>
+                    Send money to another account.
+                </p>
+
+
+                <input
+                    id="transferAccount"
+                    type="text"
+                    placeholder="Receiver account number">
+
+
+                <input
+                    id="transferAmount"
+                    type="number"
+                    placeholder="Amount">
+
+
+                <input
+                    id="transferPin"
+                    type="password"
+                    maxlength="4"
+                    placeholder="Transaction PIN">
+
+
+                <button
+                    onclick="transfer()">
+
+                    Transfer
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- TRANSACTIONS -->
+
+        <div class="transaction-header">
+
+            <div>
+
+                <h2>
+                    Recent transactions
+                </h2>
+
+                <p>
+                    Your latest account activity.
+                </p>
+
+            </div>
+
+
+            <button
+                class="statement"
+                onclick="downloadStatement()">
+
+                ↓ Download statement
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="transactions"
+            class="transactions">
+
+        </div>
+
+
+    </main>
+
+</section>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>

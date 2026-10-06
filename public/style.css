@@ -1,0 +1,1208 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+
+    --primary: #7657ff;
+
+    --primary-dark: #6244e8;
+
+    --background: #f8f7fc;
+
+    --white: #ffffff;
+
+    --text: #17152a;
+
+    --muted: #77738a;
+
+    --border: #e8e5f0;
+
+}
+
+
+body {
+
+    font-family: "Inter", sans-serif;
+
+    background:
+        var(--background);
+
+    color:
+        var(--text);
+
+}
+
+
+button,
+input {
+
+    font-family: inherit;
+
+}
+
+
+button {
+
+    cursor: pointer;
+
+}
+
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+/* =====================================
+   NOTIFICATION
+===================================== */
+
+#notification {
+
+    position: fixed;
+
+    top: 25px;
+
+    right: 25px;
+
+    z-index: 9999;
+
+}
+
+
+.notification {
+
+    padding: 15px 20px;
+
+    min-width: 280px;
+
+    border-radius: 12px;
+
+    background: white;
+
+    box-shadow:
+        0 15px 40px
+        rgba(30, 20, 70, 0.15);
+
+    opacity: 0;
+
+    transform:
+        translateY(-10px);
+
+    transition:
+        0.25s ease;
+
+    pointer-events: none;
+
+}
+
+
+.notification.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.notification.success {
+
+    border-left:
+        4px solid #22a06b;
+
+}
+
+
+.notification.error {
+
+    border-left:
+        4px solid #e5484d;
+
+}
+
+
+/* =====================================
+   AUTH PAGE
+===================================== */
+
+.auth-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+}
+
+
+.auth-left {
+
+    width: 53%;
+
+    min-height: 100vh;
+
+    padding: 45px 6%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background:
+        radial-gradient(
+            circle at 90% 15%,
+            #dcd0ff,
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #f0ecff,
+            #faf9ff
+        );
+
+}
+
+
+.auth-right {
+
+    width: 47%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px;
+
+    background:
+        #fbfaff;
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    font-size: 20px;
+
+}
+
+
+.brand-icon {
+
+    width: 36px;
+
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        var(--primary);
+
+    color: white;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 20px
+        rgba(118, 87, 255, 0.25);
+
+}
+
+
+.hero-content {
+
+    max-width: 650px;
+
+}
+
+
+.eyebrow {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color:
+        var(--primary);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.hero-content h1 {
+
+    font-size: clamp(
+        40px,
+        5vw,
+        64px
+    );
+
+    line-height: 1.05;
+
+    margin-bottom: 18px;
+
+}
+
+
+.hero-content h1 span {
+
+    color:
+        var(--primary);
+
+}
+
+
+.hero-content p {
+
+    max-width: 560px;
+
+    color:
+        var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+}
+
+
+.features {
+
+    display: flex;
+
+    gap: 25px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.features div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.features span {
+
+    width: 28px;
+
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background:
+        white;
+
+    color:
+        var(--primary);
+
+}
+
+
+.auth-footer {
+
+    color:
+        var(--muted);
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================
+   AUTH CARD
+===================================== */
+
+.auth-card {
+
+    width: 100%;
+
+    max-width: 410px;
+
+}
+
+
+.auth-heading {
+
+    margin-bottom: 25px;
+
+}
+
+
+.auth-heading h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.auth-heading p {
+
+    color:
+        var(--muted);
+
+    font-size: 14px;
+
+}
+
+
+.tabs {
+
+    display: flex;
+
+    padding: 4px;
+
+    margin-bottom: 25px;
+
+    border-radius: 13px;
+
+    background:
+        #eeeaf5;
+
+}
+
+
+.tab {
+
+    flex: 1;
+
+    height: 44px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        transparent;
+
+    color:
+        var(--muted);
+
+    font-weight: 600;
+
+}
+
+
+.tab.active {
+
+    background:
+        white;
+
+    color:
+        var(--text);
+
+    box-shadow:
+        0 4px 12px
+        rgba(30, 20, 60, 0.08);
+
+}
+
+
+.form {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
+
+}
+
+
+.input-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+}
+
+
+.input-group label {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.input-group input,
+.action-card input {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 11px;
+
+    background:
+        white;
+
+    outline: none;
+
+    color:
+        var(--text);
+
+}
+
+
+.input-group input:focus,
+.action-card input:focus {
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(118, 87, 255, 0.08);
+
+}
+
+
+.primary-button {
+
+    height: 50px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        var(--primary);
+
+    color:
+        white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding:
+        0 18px;
+
+    font-weight: 700;
+
+}
+
+
+.primary-button:hover {
+
+    background:
+        var(--primary-dark);
+
+}
+
+
+.security {
+
+    margin-top: 22px;
+
+    color:
+        var(--muted);
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================
+   DASHBOARD
+===================================== */
+
+.dashboard-page {
+
+    min-height: 100vh;
+
+}
+
+
+.navbar {
+
+    height: 75px;
+
+    padding:
+        0 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        white;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.nav-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.avatar {
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        #ece7ff;
+
+    color:
+        var(--primary);
+
+    font-weight: 800;
+
+}
+
+
+.user-name {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.user-name small {
+
+    color:
+        var(--muted);
+
+    font-size: 10px;
+
+}
+
+
+.user-name strong {
+
+    font-size: 13px;
+
+}
+
+
+.logout {
+
+    margin-left: 15px;
+
+    border: 1px solid var(--border);
+
+    background:
+        white;
+
+    padding:
+        9px 15px;
+
+    border-radius: 9px;
+
+}
+
+
+.dashboard {
+
+    max-width: 1200px;
+
+    margin:
+        auto;
+
+    padding:
+        50px 25px;
+
+}
+
+
+.dashboard-title {
+
+    margin-bottom: 30px;
+
+}
+
+
+.dashboard-title h1 {
+
+    font-size: 34px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.dashboard-title p {
+
+    color:
+        var(--muted);
+
+}
+
+
+/* BALANCE */
+
+.balance-card {
+
+    padding: 32px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7657ff,
+            #9a7dff
+        );
+
+    color:
+        white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    box-shadow:
+        0 20px 45px
+        rgba(118, 87, 255, 0.22);
+
+}
+
+
+.balance-card > div:first-child span {
+
+    opacity: 0.8;
+
+    font-size: 13px;
+
+}
+
+
+.balance-card h2 {
+
+    margin-top: 8px;
+
+    font-size: 38px;
+
+}
+
+
+.account-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    text-align: right;
+
+}
+
+
+.account-info small {
+
+    opacity: 0.75;
+
+}
+
+
+/* ACTIONS */
+
+.section-title {
+
+    margin:
+        42px 0 20px;
+
+    font-size: 22px;
+
+}
+
+
+.actions {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.action-card {
+
+    padding: 24px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    background:
+        white;
+
+    box-shadow:
+        0 10px 30px
+        rgba(40, 30, 80, 0.05);
+
+}
+
+
+.action-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 12px;
+
+    background:
+        #eeeaff;
+
+    color:
+        var(--primary);
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+}
+
+
+.action-card h3 {
+
+    margin-bottom: 7px;
+
+}
+
+
+.action-card p {
+
+    color:
+        var(--muted);
+
+    font-size: 13px;
+
+    margin-bottom: 18px;
+
+    line-height: 1.5;
+
+}
+
+
+.action-card input {
+
+    margin-bottom: 10px;
+
+}
+
+
+.action-card button {
+
+    width: 100%;
+
+    height: 44px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        #f0edff;
+
+    color:
+        var(--primary);
+
+    font-weight: 700;
+
+}
+
+
+.action-card button:hover {
+
+    background:
+        var(--primary);
+
+    color:
+        white;
+
+}
+
+
+/* TRANSACTIONS */
+
+.transaction-header {
+
+    margin-top: 45px;
+
+    margin-bottom: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.transaction-header h2 {
+
+    font-size: 22px;
+
+}
+
+
+.transaction-header p {
+
+    color:
+        var(--muted);
+
+    font-size: 13px;
+
+    margin-top: 5px;
+
+}
+
+
+.statement {
+
+    border: none;
+
+    background:
+        #eeeaff;
+
+    color:
+        var(--primary);
+
+    padding:
+        11px 15px;
+
+    border-radius: 10px;
+
+    font-weight: 700;
+
+}
+
+
+.transactions {
+
+    background:
+        white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+}
+
+
+.transaction {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding:
+        18px 20px;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.transaction:last-child {
+
+    border-bottom:
+        none;
+
+}
+
+
+.transaction-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 11px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        #eeeaff;
+
+    color:
+        var(--primary);
+
+    font-weight: 800;
+
+}
+
+
+.transaction-info {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.transaction-info span {
+
+    color:
+        var(--muted);
+
+    font-size: 11px;
+
+}
+
+
+.transaction-amount {
+
+    font-size: 14px;
+
+}
+
+
+.positive {
+
+    color:
+        #15905b;
+
+}
+
+
+.negative {
+
+    color:
+        #d44848;
+
+}
+
+
+.empty {
+
+    padding:
+        40px;
+
+    text-align: center;
+
+    color:
+        var(--muted);
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (
+    max-width: 850px
+) {
+
+    .auth-page {
+
+        flex-direction: column;
+
+    }
+
+
+    .auth-left {
+
+        width: 100%;
+
+        min-height: 45vh;
+
+        padding: 30px;
+
+    }
+
+
+    .auth-right {
+
+        width: 100%;
+
+        min-height: 55vh;
+
+        padding: 30px;
+
+    }
+
+
+    .actions {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .balance-card {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+
+    }
+
+
+    .account-info {
+
+        text-align: left;
+
+    }
+
+}
+
+
+@media (
+    max-width: 550px
+) {
+
+    .navbar {
+
+        padding:
+            0 20px;
+
+    }
+
+
+    .user-name {
+
+        display: none;
+
+    }
+
+
+    .dashboard {
+
+        padding:
+            30px 18px;
+
+    }
+
+
+    .transaction-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+}
